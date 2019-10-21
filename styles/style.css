@@ -1,0 +1,635 @@
+@keyframes figures{
+    from{
+    transform: rotate(0deg);
+  }
+    to{
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes fading {
+    100% {
+     opacity: 1;
+   }
+    50% {
+     opacity: 0.5;
+   }
+}
+
+.page {
+    min-width: 1100px;
+    /* мы ещё не умеем делать мобильную версию сайта, */
+    /* поэтому выше установлена минимальная ширина страницы */
+    max-width: 1600px;
+    /* выше установили ограничение по максимальной ширине */
+    margin: 0 auto;
+    /* выше для экранов больше 1600px отцентрировали весь контент */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    flex-direction: column;
+
+}
+
+/* Надо исправить: При уменьшении ширины экрана, текст оказывается под картинками.
+ Нужно поправить через z-index*/
+.header {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 756px;
+    background-color: #f2f2f2;
+    margin-bottom: 100px;
+    overflow: hidden;
+    /* выше установили ограничения для секции */
+}
+
+.logo{
+    position: absolute;
+    left: 64px;
+    top: 30px;
+    width: 183px;
+    height: 32px;
+}
+
+.logo_header{
+    background-image: url(../images/logo.svg);
+}
+
+.header__title{
+    position: absolute;
+    display: flex;
+    width: 730px;
+    align-self: center;
+    left: 64px;
+    line-height: 96px;
+    font-size: 102px;
+    font-weight: bold;
+    /* Надо исправить: выше задается margin-right, но здесь margin снова сбрасывается до 0
+     Если верхний margin-right не нужен - лучше его удалить */
+    margin: 0px;
+    z-index: 3;
+}
+
+.header__subtitle{
+    position: absolute;
+    width: 388px;
+    left: 64px;
+    bottom: 30px;
+    line-height: 25px;
+    font-size: 18px;
+    z-index: 3;
+}
+
+.header__link{
+    text-decoration: none;
+    color: #2F80ED;
+    opacity: 1
+}
+
+.header__illustration{
+    position: absolute;
+    width:765px;
+    height: 608px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+    background-position: center;
+    background-size: cover;
+}
+
+.header__square-pic{
+    display: flex;
+    position: absolute;
+    width: 568px;
+    height: 568px;
+    right: 0px;
+    z-index: 1;
+    background-color:#2F80ED;
+    /* Надо исправить: дублирование свойств width и height */
+    align-self:  center;
+    margin-right: 0px;
+    transform: rotate(-15deg);
+    animation: figures 20s linear infinite normal forwards;
+}
+
+.technics{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+    
+.video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.video__iframes{
+    margin: 50px 0px 0px;
+    margin-bottom: -60px;
+    z-index: 2;
+}
+
+
+.iframe_margin{
+    margin-right: 20px;
+}
+
+.oakley{
+    width: 100%;
+    background-color: #F2F2F2;
+    padding-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.cards__item{
+    text-align: center;
+    width:240px;
+    margin: 60px 0px 0px 120px;
+}
+
+.cards__item_margin{
+    margin-right: 0px;
+}
+
+.cards__image{
+    width:160px;
+    height:160px;
+    margin:0px 40px 43px;
+    border-radius: 80px;
+}
+
+.cards__title{
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: bold;
+    margin:0px 0px 16px;
+}
+
+.cards__description{
+    line-height:23px;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description{
+    width: 80%;
+}
+
+
+.two-columns{
+    display: flex;
+    margin: 0px;
+    justify-content: space-between;
+}
+
+/* Можно лучше: Нужен ли еще данный селектор по тегу? Кажется, теги p простилизованы отдельно */
+
+
+.two-columns__brief{
+    width: 175px;
+    line-height: 1.2;
+    font-size: 18px;
+    color: #2F80ED;
+    margin: 0px;
+    font-weight: normal;
+}
+
+.two-columns__paragraph{
+    margin: 30px 0px 30px;
+}
+
+.two-columns__paragraph:first-of-type{
+    margin: 0px;
+}
+
+.two-columns__main-text{
+    width: 80%;
+    line-height: 34px;
+    font-size: 24px;
+}
+
+.two-columns__main-text_margin{
+    margin: 30px 0px 30px;
+}
+
+
+.two-columns__main-text_span{
+    font-weight: bold;
+}
+
+.khan{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    padding-top: 105px;
+    background-color: #F2F2F2;
+}
+
+.khan__container{
+    width: 80%;
+}
+
+.khan__author{
+    text-decoration: none;
+    margin: 0px;
+    line-height: 42px;
+    font-size: 30px;
+    
+}
+
+.khan__title{
+    margin: 0px;
+    line-height: 1.15;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.khan__quote{
+    width: 790px;
+    line-height: 34px;
+    font-size: 24px;
+    margin: 50px 0px 36px;
+}
+
+.khan__quote-author{
+    
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.khan__quote-author-subline{
+    line-height: 1.15;
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 68px;
+}
+
+.khan__book-container{
+    margin: 0px 20px 0px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.khan__book-pic{
+    width: 608px;
+    height: 620px;
+    overflow: hidden;
+}
+
+.khan__buy-link{
+    height: 48px;
+    line-height: 42px;
+    font-size: 30px;
+    margin-left: 20px;
+    color: #2F80ED;
+    text-decoration: none;
+    opacity: 1
+}
+
+.digits{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0px;
+}
+
+
+.section-title{
+    width: 60%;
+    line-height: 69px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+}
+
+.section-subtitle{
+    width: 60%;
+    line-height: 34px;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.table{
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    justify-content: space-between;
+}
+
+.table__cell{
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+}
+
+.table__heading{
+    line-height: 1.15;
+    font-size: 24px;
+    margin: 0px 0px 20px;
+}
+
+.table__text{
+    line-height: 1.2;
+    font-size: 18px;
+    margin: 0px;
+}
+
+/* Можно лучше: Нужен ли еще данный селектор по тегу? Тоже стоит проверить */
+
+
+
+.table__text_bank-2017{
+    margin-top: 20px;
+}
+
+.table__cell_margin-top{
+    margin-top: 60px;
+}
+
+.feinman{
+    position: relative;
+    display: flex;
+    padding-top: 80px;
+    height: 790px;
+    margin-bottom: 0px;
+    width: 100%;
+    flex-direction: column;
+    background-color: #F2F2F2;
+}
+
+.feinman__image{
+    position: absolute;
+    width: 867px;
+    height: 637px;
+    z-index: 1;
+    bottom: 0px;
+    left: 0px;
+}
+
+.feinman_title{
+    width: 648px;
+    text-align: center;
+    line-height: 1.15;
+    font-size: 120px;
+    font-weight: bold;
+    margin: 0px;
+    align-self: center;
+    z-index: 2;
+}
+
+.feinman_subtitle{
+    text-align: center;
+    margin-top: 70px;
+    align-self: center;
+    line-height: 51px;
+    font-size: 36px;
+    z-index: 2;
+}
+
+.feinman_link{
+    position: absolute;
+    right: 0px;
+    top:50%;
+    justify-content: center;
+    line-height: 51px;
+    font-size: 36px;
+    margin-right: 48px;
+    text-decoration: none;
+    color: #1F1F1F;
+    z-index: 2;
+    opacity: 1
+}
+
+.kaufman{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1F1F1F;
+    width: 100%;
+    color: white;
+    padding-top: 90px;
+}
+
+.kaufman__section-title{
+    width: 60%;
+    line-height: 69px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+}
+
+.kaufman_subtitle{
+    line-height: 34px;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.kaufman__table{
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 90px;
+    z-index: 2;
+}
+
+
+.table__cell_kaufman{
+    width: 200px;
+    margin-bottom: 0px;
+    margin-top: 80px;
+}
+
+.kaufman__tringle{
+    position: absolute;
+    width: 877px;
+    height: 877px;
+    right: -210px;
+    top: 0px;
+    background-image: url(../images/triangle.svg);
+    background-size: 100%;
+    z-index: 1;
+    animation: figures 20s  linear infinite normal forwards;
+}
+
+.resources{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.resources_logo-zone{
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+    margin: 80px auto 217px;
+   
+}
+
+.resources__logo{
+    width: 270px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:100%;
+    
+}
+
+.logo-arzamas{
+    background-image: url(../images/logo/arzamas.svg);
+}
+
+.logo-n1{
+    background-image: url(../images/logo/n1.svg);
+}
+
+.logo-strelka{
+    background-image: url(../images/logo/strelka.svg);
+}
+
+.logo-polka{
+    background-image: url(../images/logo/polka.svg);
+}
+
+.footer{
+    background-color: #1f1f1f;
+    color:#ffffff;
+}
+
+.footer__columns{
+    display: flex;
+    width: 90%;
+    padding: 60px 0px 40px;
+    margin: 0px auto 0px;
+    justify-content: space-between;
+    min-height: 350px;
+
+}
+
+
+.footer__column{
+    position: relative;
+}
+
+.footer__column:first-of-type{
+    position: relative;
+    flex-direction: column;
+    flex-basis: 711px;
+    margin: 0px;
+
+}
+
+.footer__column_copyright{
+    position: relative;
+    flex-direction: column;
+    margin: 0px;
+
+}
+
+.logo_footer{
+    width: 183px;
+    height: 35px;
+    left: 0px;
+    top: 0px;
+    background-image: url(../images/logo_white.svg);
+}
+
+.footer__column-heading{
+    margin-bottom: 20px;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.footer__column-links{
+    line-height: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    opacity: 1
+}
+
+.footer__author{
+    position: absolute;
+
+    line-height: 25px;
+    font-size: 18px;
+    margin-top: 18px;
+    bottom: 18px;
+}
+
+/* Можно лучше: как правило, селекторы разделяют одной пустой строкой для лучшей читаемости кода.*/
+.footer__social-icons{
+    display: flex;
+    flex-direction: row;
+    width: 16px;
+    height:16px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+}
+
+/* Надо исправить: как правило, в классах избегают заглавных букв и кириллицы. Считается плохой практикой.
+ В случае с кириллицей, если команда интернациональная, может плохо сказаться. Тут можно просто:
+ footer__social-icons_fb
+  footer__social-icons_vk
+ */
+.footer__social-icons_fb{
+    background-image: url(../images/facebook_white.svg);
+
+}
+
+.footer__social-icons_vk{
+    background-image: url(../images/vk_white.svg);
+}
+
+.footer__social-icons_inst{
+    background-image: url(../images/instagram_white.svg);
+}
+
+.header__link:hover,
+.khan__buy-link:hover,
+.feinman_link:hover,
+.khan__buy-link:hover,
+.footer__column-links:hover{
+  transition: fading linear 1s;
+  opacity: 0.5;
+}
